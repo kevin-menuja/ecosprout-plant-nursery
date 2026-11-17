@@ -1,0 +1,30 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+config/db.local.php
+config/config.local.php
+**/*.local.php
+*.pem
+*.key
+*.pfx
+
+# Runtime-generated data
+logs/
+uploads/
+cache/
+tmp/
+*.log
+*.sql.gz
+*.sqlite
+*.sqlite3
+*.db
+
+# IDE and environment
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+vendor/
+node_modules/

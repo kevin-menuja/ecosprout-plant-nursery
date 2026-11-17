@@ -1,0 +1,324 @@
+:root {
+    --green: #2d6a4f;
+    --leaf: #74c69d;
+    --mint: #f1faee;
+    --ink: #1f2933;
+    --gold: #f4a261;
+}
+
+* {
+    letter-spacing: 0;
+}
+
+body {
+    background: #fbfdf9;
+    color: var(--ink);
+    font-family: "Nunito", Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.navbar {
+    transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.navbar .nav-link {
+    color: #244236;
+    font-weight: 700;
+    position: relative;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: var(--green);
+}
+
+.navbar .nav-link::after {
+    background: var(--leaf);
+    bottom: 4px;
+    content: "";
+    height: 2px;
+    left: .5rem;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+    width: calc(100% - 1rem);
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link:focus::after {
+    transform: scaleX(1);
+}
+
+.cart-pill {
+    background: var(--gold);
+    border-radius: 50%;
+    color: #111;
+    display: inline-grid;
+    font-size: .68rem;
+    height: 18px;
+    margin-left: 2px;
+    place-items: center;
+    width: 18px;
+}
+
+.hero {
+    animation: heroDrift 18s ease-in-out infinite alternate;
+    background-image: linear-gradient(90deg, rgba(15, 58, 40, .82), rgba(15, 58, 40, .36)), url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1800&q=80");
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    min-height: 74vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    animation: fadeSlideUp .8s ease both;
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    font-weight: 800;
+    line-height: .95;
+    max-width: 780px;
+}
+
+.hero p {
+    animation: fadeSlideUp .8s ease .12s both;
+    font-size: 1.18rem;
+    max-width: 650px;
+}
+
+.hero .btn {
+    animation: fadeSlideUp .8s ease .24s both;
+}
+
+.leaf-particle {
+    animation: floatLeaf linear infinite;
+    color: rgba(255, 255, 255, .38);
+    font-size: 1.25rem;
+    left: var(--leaf-left);
+    pointer-events: none;
+    position: absolute;
+    top: -3rem;
+    transform: rotate(var(--leaf-rotate));
+    z-index: 1;
+}
+
+.section-band {
+    padding: 4rem 0;
+}
+
+.section-title {
+    color: var(--green);
+    font-weight: 800;
+}
+
+.plant-card,
+.service-card,
+.workshop-card,
+.blog-card,
+.dashboard-tile {
+    background: #fff;
+    border: 1px solid rgba(45, 106, 79, .12);
+    border-radius: 8px;
+    box-shadow: 0 10px 28px rgba(45, 106, 79, .08);
+    height: 100%;
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.plant-card:hover,
+.service-card:hover,
+.workshop-card:hover,
+.blog-card:hover {
+    box-shadow: 0 16px 34px rgba(45, 106, 79, .14);
+    transform: translateY(-7px);
+}
+
+.card-img-top,
+.entity-img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform .45s ease, filter .45s ease;
+    width: 100%;
+}
+
+.plant-card:hover .card-img-top,
+.service-card:hover .card-img-top,
+.blog-card:hover .card-img-top {
+    filter: saturate(1.08);
+    transform: scale(1.055);
+}
+
+.badge-category {
+    background: var(--mint);
+    color: var(--green);
+    font-weight: 800;
+}
+
+.btn-success {
+    background: var(--green);
+    border-color: var(--green);
+    box-shadow: 0 8px 18px rgba(45, 106, 79, .16);
+    transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.btn-success:hover {
+    background: #245640;
+    border-color: #245640;
+    box-shadow: 0 12px 24px rgba(45, 106, 79, .22);
+    transform: translateY(-2px);
+}
+
+.btn-outline-success {
+    border-color: var(--green);
+    color: var(--green);
+    transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.btn-outline-success:hover {
+    background: var(--green);
+    border-color: var(--green);
+    transform: translateY(-2px);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--leaf);
+    box-shadow: 0 0 0 .2rem rgba(116, 198, 157, .25);
+}
+
+.table img {
+    border-radius: 6px;
+    height: 54px;
+    object-fit: cover;
+    width: 72px;
+}
+
+.auth-panel {
+    background: #fff;
+    border: 1px solid rgba(45, 106, 79, .12);
+    border-radius: 8px;
+    box-shadow: 0 14px 38px rgba(45, 106, 79, .09);
+    padding: 2rem;
+}
+
+.dashboard-tile {
+    padding: 1.25rem;
+}
+
+.dashboard-tile i {
+    color: var(--green);
+    font-size: 1.6rem;
+}
+
+.site-footer {
+    background: var(--green);
+    color: #fff;
+}
+
+.social-links i {
+    font-size: 1.35rem;
+    margin-left: .8rem;
+    transition: transform .2s ease;
+}
+
+.social-links i:hover {
+    transform: translateY(-3px) rotate(-6deg);
+}
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .65s ease, transform .65s ease;
+}
+
+.reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pulse-icon {
+    animation: softPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes heroDrift {
+    from {
+        background-position: center center;
+    }
+
+    to {
+        background-position: center 46%;
+    }
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatLeaf {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -2rem, 0) rotate(var(--leaf-rotate));
+    }
+
+    12% {
+        opacity: .8;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(var(--leaf-drift), 82vh, 0) rotate(calc(var(--leaf-rotate) + 180deg));
+    }
+}
+
+@keyframes softPulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+
+    .leaf-particle {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        min-height: 68vh;
+        padding: 4rem 0;
+    }
+
+    .section-band {
+        padding: 2.5rem 0;
+    }
+}
